@@ -9,7 +9,7 @@ import com.aan.girsang.pembukuan.model.master.ItemLain;
 import com.aan.girsang.pembukuan.model.master.Menu;
 import com.aan.girsang.pembukuan.model.master.Pelanggan;
 import com.aan.girsang.pembukuan.model.master.RunningNumber;
-import com.aan.girsang.pembukuan.model.master.Pengguna;
+import com.aan.girsang.pembukuan.model.master.Akun;
 import com.aan.girsang.pembukuan.model.runingnumber.RunningNumberEnum;
 import com.aan.girsang.pembukuan.service.MasterService;
 import java.util.List;
@@ -131,32 +131,32 @@ public class MasterServiceImpl implements MasterService{
     //<editor-fold defaultstate="collapsed" desc="User">
     @Override
     @Transactional(isolation = Isolation.SERIALIZABLE)
-    public void simpan(Pengguna user) {
+    public void simpan(Akun user) {
         userDao.simpan(user);
     }
     
     @Override
     @Transactional
-    public void hapus(Pengguna user) {
+    public void hapus(Akun user) {
         userDao.hapus(user);
     }
     
     @Override
-    public Pengguna cariIdUser(String id) {
+    public Akun cariIdUser(String id) {
         return userDao.cariIdUser(id);
     }
     
     @Override
-    public Pengguna cariUsername(String username) {
+    public Akun cariUsername(String username) {
         return userDao.cariUsername(username);
     }
     @Override
-    public List<Pengguna> cariUser(String username){
+    public List<Akun> cariUser(String username){
         return userDao.cariUser(username);
     }
     
     @Override
-    public List<Pengguna> semuaUser() {
+    public List<Akun> semuaUser() {
         return userDao.semuaUser();
     }
 //</editor-fold>

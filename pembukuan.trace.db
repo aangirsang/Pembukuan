@@ -1,3 +1,0 @@
-10-29 01:04:12 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
-select user0_.id as id1_13_, user0_.pass as pass2_13_, user0_.username as username3_13_ from User user0_ where user0_.username=? [42102-176]

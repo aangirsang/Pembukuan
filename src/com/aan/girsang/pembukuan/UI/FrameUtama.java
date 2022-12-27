@@ -1,7 +1,7 @@
 package com.aan.girsang.pembukuan.UI;
 
 import com.aan.girsang.pembukuan.Pembukuan;
-import com.aan.girsang.pembukuan.model.master.Pengguna;
+import com.aan.girsang.pembukuan.model.master.Akun;
 import com.aan.girsang.pembukuan.util.popup.MasterPopUp;
 import com.aan.girsang.pembukuan.util.popup.PemasukanPopUp;
 import com.aan.girsang.pembukuan.util.popup.PengeluaranPopUp;
@@ -24,7 +24,7 @@ import javax.swing.Timer;
 
 public class FrameUtama extends javax.swing.JFrame {
 
-    private Pengguna user;
+    private Akun user;
     private static FrameUtama instance;
     public static FrameUtama getInstance() {
         return instance;
@@ -77,8 +77,8 @@ public class FrameUtama extends javax.swing.JFrame {
         txtUsername.setText("");
         txtPass.setText("");
     }
-    private Pengguna login() {
-        Pengguna u = Pembukuan.getMasterService().cariUsername(txtUsername.getText());
+    private Akun login() {
+        Akun u = Pembukuan.getMasterService().cariUsername(txtUsername.getText());
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Username Tidak Terdaftar");
             txtUsername.requestFocus();

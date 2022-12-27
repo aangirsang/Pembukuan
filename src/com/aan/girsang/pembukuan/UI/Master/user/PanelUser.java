@@ -3,7 +3,7 @@ package com.aan.girsang.pembukuan.UI.Master.user;
 import com.aan.girsang.pembukuan.UI.Master.item.*;
 import com.aan.girsang.pembukuan.Pembukuan;
 import com.aan.girsang.pembukuan.model.master.ItemLain;
-import com.aan.girsang.pembukuan.model.master.Pengguna;
+import com.aan.girsang.pembukuan.model.master.Akun;
 import com.aan.girsang.pembukuan.util.Notifikasi;
 import com.aan.girsang.pembukuan.util.UkuranTabel;
 import java.awt.event.ActionEvent;
@@ -22,8 +22,8 @@ import javax.swing.event.ListSelectionListener;
 
 public class PanelUser extends javax.swing.JPanel {
 
-    Pengguna user;
-    List<Pengguna> daftarUser;
+    Akun user;
+    List<Akun> daftarUser;
     private String idSelect;
     private JPopupMenu popup = new JPopupMenu();
     
@@ -54,7 +54,7 @@ public class PanelUser extends javax.swing.JPanel {
     }
     private void cariItem(){
         if (!idSelect.equals("")) {
-            user = new Pengguna();
+            user = new Akun();
             user = Pembukuan.getMasterService().cariIdUser(idSelect);
         } else {
             user = null;
@@ -74,12 +74,12 @@ public class PanelUser extends javax.swing.JPanel {
     }
     private void baruItem(){
         user = null;
-        Pengguna u = new DialogUser().showDialog(user);
+        Akun u = new DialogUser().showDialog(user);
         if(u!=null){
             boolean data = false;
-            user = new Pengguna();
+            user = new Akun();
             user = u;
-            List<Pengguna> is = Pembukuan.getMasterService().semuaUser();
+            List<Akun> is = Pembukuan.getMasterService().semuaUser();
             for(int j=0;j<is.size();j++){
                 if(is.get(j).getUsername()
                         .equals(user.getUsername())&&
@@ -100,11 +100,11 @@ public class PanelUser extends javax.swing.JPanel {
         if(user==null){
                 Notifikasi.pesanTidakAdaData();
             }else{
-                Pengguna u = new DialogUser().showDialog(user);
+                Akun u = new DialogUser().showDialog(user);
                 if(u!=null){
                     boolean data = false;
                     user = u;
-                    List<Pengguna> is = Pembukuan.getMasterService().semuaUser();
+                    List<Akun> is = Pembukuan.getMasterService().semuaUser();
                     for(int j=0;j<is.size();j++){
                         if(is.get(j).getUsername()
                                 .equals(user.getUsername())&&

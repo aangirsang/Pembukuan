@@ -1,13 +1,13 @@
 package com.aan.girsang.pembukuan.UI.Master.user;
 
-import com.aan.girsang.pembukuan.model.master.Pengguna;
+import com.aan.girsang.pembukuan.model.master.Akun;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 public class TabelModelUser extends AbstractTableModel{
 
-    List<Pengguna> daftarUser;
-    public TabelModelUser(List<Pengguna> list){
+    List<Akun> daftarUser;
+    public TabelModelUser(List<Akun> list){
         this.daftarUser = list;
     }
     @Override
@@ -30,7 +30,7 @@ public class TabelModelUser extends AbstractTableModel{
     }
     @Override
     public Object getValueAt(int row, int col) {
-        Pengguna u = daftarUser.get(row);
+        Akun u = daftarUser.get(row);
         switch(col){
             case (0):return u.getId();
             case (1):return u.getUsername();

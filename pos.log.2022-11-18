@@ -1,0 +1,16 @@
+2022-11-18 10:10:55,263 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@69b2283a: startup date [Fri Nov 18 10:10:55 WIB 2022]; root of context hierarchy
+2022-11-18 10:10:55,312 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from URL [file:/D:/Andri/Project/Pembukuan%205/build/classes/applicationContext.xml]
+2022-11-18 10:10:57,236 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [database.properties]
+2022-11-18 10:10:57,352 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2022-11-18 10:10:57,508 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2022-11-18 10:10:57,514 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2022-11-18 10:10:57,519 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2022-11-18 10:10:57,522 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2022-11-18 10:10:57,541 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/D:/Andri/Project/Pembukuan%205/build/classes/hibernate.cfg.xml
+2022-11-18 10:10:57,570 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2022-11-18 10:10:57,610 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2022-11-18 10:10:58,091 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-11-18 10:10:58,461 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2022-11-18 10:10:58,467 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2022-11-18 10:10:59,056 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2503ec73] of Hibernate SessionFactory for HibernateTransactionManager
+2022-11-18 10:11:04,536 [Thread-1] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@69b2283a: startup date [Fri Nov 18 10:10:55 WIB 2022]; root of context hierarchy

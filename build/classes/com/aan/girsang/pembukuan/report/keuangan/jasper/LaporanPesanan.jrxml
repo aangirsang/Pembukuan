@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d2cb97a-20a1-44b8-8336-776c3ee980fd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="faktur" class="java.lang.String"/>
+	<field name="tanggalKirim" class="java.util.Date"/>
+	<field name="tanggalPesan" class="java.util.Date"/>
+	<field name="namaPelanggan" class="java.lang.String"/>
+	<field name="alamatKirim" class="java.lang.String"/>
+	<field name="ongkos" class="java.math.BigDecimal"/>
+	<field name="namaMenu" class="java.lang.String"/>
+	<field name="hargaMenu" class="java.math.BigDecimal"/>
+	<field name="kuantitas" class="java.lang.Integer"/>
+	<field name="subTotal" class="java.math.BigDecimal"/>
+	<variable name="subTotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="Faktur" calculation="Sum">
+		<variableExpression><![CDATA[$F{subTotal}]]></variableExpression>
+	</variable>
+	<group name="Faktur">
+		<groupExpression><![CDATA[$F{faktur}]]></groupExpression>
+		<groupHeader>
+			<band height="100">
+				<textField>
+					<reportElement x="106" y="0" width="100" height="20" uuid="27308225-59a5-4307-884f-4afda1bdcc18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{faktur}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy  HH:mm">
+					<reportElement x="106" y="40" width="100" height="20" uuid="9f0e4f5d-cf7b-4539-a1ba-68241cee2435"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tanggalKirim}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy  HH:mm">
+					<reportElement x="106" y="20" width="100" height="20" uuid="329a0d74-3395-4e1b-9579-6bec5fc7834a"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tanggalPesan}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="88" height="20" uuid="7e345b8b-5421-494b-8bd5-561fc0b1c7cd"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<text><![CDATA[Faktur]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="20" width="88" height="20" uuid="ecfe5ce0-f05c-4f4b-971b-65943955984f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<text><![CDATA[Tanggal Pesan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="40" width="88" height="20" uuid="1b87d9f5-33f7-4df3-955a-45d37332bc93"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<text><![CDATA[Tanggal Kirim]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="347" y="20" width="208" height="20" uuid="9f5ea9c1-4230-4e1e-9b9a-7107bfea88e9"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{alamatKirim}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###">
+					<reportElement x="347" y="40" width="208" height="20" uuid="d75ea3f9-34f4-4784-a2b5-9416e752036d"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ongkos}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="247" y="0" width="82" height="20" uuid="2c9fa0d9-dc13-4ad2-8403-3674e3751a44"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<text><![CDATA[Nama Pelanggan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="247" y="20" width="82" height="20" uuid="4be52799-dcfe-4a08-ad96-69ffab30e323"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<text><![CDATA[Alamat Kirim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="247" y="40" width="82" height="20" uuid="20bb1139-02d7-4d2b-9ccb-ce5cc8efc08e"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<text><![CDATA[Biaya Ongkos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="80" width="270" height="20" backcolor="#CCCCCC" uuid="598d2ef7-9519-4a61-a17e-88c7cade4b5f"/>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nama Menu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="270" y="80" width="100" height="20" backcolor="#CCCCCC" uuid="d2523acf-1a37-45a4-957f-da74c6f50c8d"/>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Harga Menu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="370" y="80" width="85" height="20" backcolor="#CCCCCC" uuid="e00f95ab-94b8-4848-bc89-1520c316cf8a"/>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kuantitas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="455" y="80" width="100" height="20" backcolor="#CCCCCC" uuid="fd043da9-7bf8-41a7-b677-7422d38a2166"/>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sub Total]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="347" y="0" width="208" height="20" uuid="79a21abb-adfb-4933-97b7-f1726352cd54"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{namaPelanggan}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="329" y="0" width="18" height="20" uuid="325ad20b-b251-4dd6-9d63-464148a27640"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="329" y="20" width="18" height="20" uuid="7d67f6e1-2aa4-4ac9-b88c-1a4ee33594a1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="329" y="40" width="18" height="20" uuid="22666264-2941-4d5a-af2a-55ced3e2738b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="88" y="0" width="18" height="20" uuid="78a0da37-1930-49e5-9e11-61986f43712a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="88" y="20" width="18" height="20" uuid="02a7bcf8-e124-4ff8-a882-f2a05f941ee6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="88" y="40" width="18" height="20" uuid="0a5d7aad-f37e-463e-9df1-4d9dec538136"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50">
+				<textField pattern="#,###">
+					<reportElement x="455" y="0" width="100" height="20" uuid="56217152-bdfa-4711-bfe0-5307b1f9d530"/>
+					<box rightPadding="3">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{subTotal_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="555" height="20" uuid="bd3fa2db-584d-4697-96de-ca971ecd9d5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PESANAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="555" height="20" uuid="95e79516-517c-4237-838a-782eaf014712"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BARNESFOOD]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH:mm:ss">
+				<reportElement x="0" y="0" width="555" height="20" uuid="009246e1-6ec2-4290-81f5-d7265bc03459"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="#,###">
+				<reportElement stretchType="RelativeToBandHeight" x="270" y="0" width="100" height="20" uuid="d90e318b-72d9-4169-af2a-0813fe398254"/>
+				<box rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hargaMenu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="370" y="0" width="85" height="20" uuid="163cde2a-6bcc-43ff-89ab-1758106dd94d"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kuantitas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###">
+				<reportElement stretchType="RelativeToBandHeight" x="455" y="0" width="100" height="20" uuid="5f0e3ee7-b147-464c-9d37-9b983c6b9da5"/>
+				<box rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subTotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="20" uuid="7adcf514-ec8f-4d71-ae91-b1820f948bce"/>
+				<box leftPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namaMenu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

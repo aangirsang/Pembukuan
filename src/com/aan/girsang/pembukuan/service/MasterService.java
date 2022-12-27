@@ -4,7 +4,7 @@ import com.aan.girsang.pembukuan.model.master.ItemLain;
 import com.aan.girsang.pembukuan.model.master.Menu;
 import com.aan.girsang.pembukuan.model.master.Pelanggan;
 import com.aan.girsang.pembukuan.model.master.RunningNumber;
-import com.aan.girsang.pembukuan.model.master.Pengguna;
+import com.aan.girsang.pembukuan.model.master.Akun;
 import com.aan.girsang.pembukuan.model.runingnumber.RunningNumberEnum;
 import java.util.List;
 
@@ -36,11 +36,11 @@ public interface MasterService {
     public List<Pelanggan> cariNamaPelanggan(String namaLengkap);
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="User">
-    public void simpan(Pengguna user);
-    public void hapus(Pengguna user);
-    public Pengguna cariIdUser(String id);
-    public Pengguna cariUsername(String username);
-    public List<Pengguna> cariUser(String username);
-    public List<Pengguna> semuaUser();
+    public void simpan(Akun user);
+    public void hapus(Akun user);
+    public Akun cariIdUser(String id);
+    public Akun cariUsername(String username);
+    public List<Akun> cariUser(String username);
+    public List<Akun> semuaUser();
 //</editor-fold>
 }

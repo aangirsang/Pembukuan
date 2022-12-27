@@ -1,24 +1,24 @@
 package com.aan.girsang.pembukuan.UI.Master.user;
 
 import com.aan.girsang.pembukuan.UI.FrameUtama;
-import com.aan.girsang.pembukuan.model.master.Pengguna;
+import com.aan.girsang.pembukuan.model.master.Akun;
 import com.aan.girsang.pembukuan.util.TextComponentUtils;
 import java.awt.event.ActionEvent;
 
 public class DialogUser extends javax.swing.JDialog {
 
-    Pengguna user;
+    Akun user;
     public DialogUser() {
         super(FrameUtama.getInstance(), true);
         initComponents();
         initListener();
     }
-    public Pengguna showDialog(Pengguna u){
+    public Akun showDialog(Akun u){
         txtUsername.setText("");
         txtPassword.setText("");
         if(u!=null){
             setTitle("Ubah Data User");
-            user = new Pengguna();
+            user = new Akun();
             clear();
             loadModelToFom(u);
         }else{
@@ -35,7 +35,7 @@ public class DialogUser extends javax.swing.JDialog {
     private void clear(){
         txtUsername.setText("");
     }
-    private void loadModelToFom(Pengguna u){
+    private void loadModelToFom(Akun u){
         user = u;
         txtUsername.setText(user.getUsername());
         txtPassword.setText(user.getPass());
@@ -52,7 +52,7 @@ public class DialogUser extends javax.swing.JDialog {
                     user.setPass(new String(txtPassword.getPassword()));
                 }
             }else{
-                user = new Pengguna();
+                user = new Akun();
                 user.setPass(new String(txtPassword.getPassword()));
             }
             user.setUsername(txtUsername.getText());
